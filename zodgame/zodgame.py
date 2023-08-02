@@ -51,7 +51,7 @@ def zodgame_checkin(driver, formhash):
     resp = driver.execute_script("return " + checkin_query)
     match = re.search('<div class="c">\n(.*?)</div>\n', resp["response"], re.S)
     message = match[1] if match is not None else "签到失败"
-    print(f"【签到】{message}")
+    print(f"【签 到】{message}")
     return "恭喜你签到成功!" in message or "您今日已经签到，请明天再来" in message
 
 def zodgame_task(driver, formhash):
